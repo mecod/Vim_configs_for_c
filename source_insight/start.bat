@@ -1,0 +1,1 @@
+start gvim -S session.vim -c "cd %cd%" --servername %cd% +"so project.vim"

@@ -118,6 +118,22 @@ colorscheme desert
 " set tags=tags;
 set autochdir
 
+" 使用pathogen自动安装插件
+execute pathogen#infect()
+" 自动加载NERDTree
+" autocmd vimenter * NERDTree
+
+"  使用Trinity模拟 Source Insight
+" Open and close all the three plugins on the same time 
+nmap <F8>  :TrinityToggleAll<CR> 
+" Open and close the Source Explorer separately 
+nmap <F9>  :TrinityToggleSourceExplorer<CR> 
+" Open and close the Taglist separately 
+nmap <F10> :TrinityToggleTagList<CR> 
+" Open and close the NERD Tree separately 
+nmap <F11> :TrinityToggleNERDTree<CR> 
+
+
 let Tlist_Show_Menu = 1
 " 这项必须设定，否则出错,配置taglist的ctags路径
 "let Tlist_Ctags_Cmd = 'D:/Vim/vim71/ctags.exe'
