@@ -1,2 +1,2 @@
-bearded-lana
+目标：配置Vim，适合在Windows下开发大型C语言工程
 ============
