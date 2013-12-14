@@ -159,7 +159,7 @@ set completeopt=longest,menu
 "设置窗口大小和位置
 " set lines=100
 set columns=100
-winpos 0 0
+" winpos 0 0
 
 " 按下F5重新生成tag文件，并更新taglist
 map <leader>cg :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR> :TlistUpdate<CR>
