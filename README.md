@@ -19,3 +19,10 @@ b) 使用Trinity插件把taglist，SrcExpl，NERDTree插件整合在一起使用
 
 第三篇《Vim+cscope+ctags+tags阅读源代码》，http://zhwen.org/?p=articles/cscope-tags
 a) cscope和ctags两个工具的用法
+
+2014.1.8 增加Windows下使用方法
+1. 找到C:\Program Files\Vim   (x64是C:\Program Files (x86)\Vim, 或vim其它安装位置)
+2. 删除文件夹vimfiles         (会删除之前vim所有配置，请自己备份)
+3. 把本工程中vimfiles放在1位置
+4. 在C:\Program Files\Vim\vimrc文件末尾添加source $VIM/vimfiles/_vimrc
+5. 把need_add_to_path目录下的所有文件放到C:\Windows目录下
