@@ -1,99 +1,16 @@
-set nocompatible
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ï»¿"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
-" => Í¨ÓÃÉèÖÃ
+" => é€šç”¨è®¾ç½®
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" å–æ¶ˆå…¼å®¹Viè®¾ç½®ï¼Œé¿å…å‘½ä»¤å†²çª
+set nocompatible
+
 " Sets how many lines of history VIM has to remember
-" ÉèÖÃvim´æ´¢µÄÀúÊ·ÃüÁî¼ÇÂ¼µÄÌõÊı
+" è®¾ç½®vimå­˜å‚¨çš„å†å²å‘½ä»¤è®°å½•çš„æ¡æ•°
 set history=700
 
-" °´±à³ÌÓïÑÔµÄÓï·¨£¬¶Ô´úÂë½øĞĞÉ«²Ê±êÊ¾£¬ÊõÓï½Ğ×öÓï·¨¸ßÁÁ
-" syntax enable
-" Çå³ıÓï·¨¸ßÁÁ, syntax clear
-" set syntax=off
-syntax on
-
-" È¡Ïû±à¼­ÎÄ¼ş±¸·İ
+" å–æ¶ˆç¼–è¾‘æ–‡ä»¶å¤‡ä»½
 set nobackup
-
-" ÏÔÊ¾ĞĞÊı±êÊ¾
-set number
-
-" ´ò¿ª×´Ì¬À¸µÄ×ø±êĞÅÏ¢
-set ruler
-
-" ÉèÖÃgui½çÃæ
-" °ÑguiµÄ¹¤¾ßÀ¸È¥µô
-set guioptions-=T
-" °ÑguiµÄ²Ëµ¥È¥µô
-set guioptions-=m
-" °ÑguiµÄÓÒ±ßµÄ»¬¶¯ÌõÈ¥µô
-set guioptions-=r
-" °ÑguiµÄ×ó±ßµÄ»¬¶¯ÌõÈ¥µô
-set guioptions-=L
-
-" È¡Ïûµ×²¿×´Ì¬À¸ÏÔÊ¾¡£1Îª¹Ø±Õ£¬2Îª¿ªÆô
-" 0: never
-" 1: only if there are at least two windows
-" 2: always
-set laststatus=2
-set statusline=%.45F\ %m\%=\|%{&fileencoding?&fileencoding:&encoding}\|%{&fileformat}\|%{&filetype}\ %4l,%c
-
-" ½«ÊäÈëµÄÃüÁîÏÔÊ¾³öÀ´£¬±ãÓÚ²é¿´µ±Ç°ÊäÈëµÄĞÅÏ¢
-set showcmd
-
-" ÉèÖÃÄ§ÊõÆ¥Åä¿ØÖÆ£¬¿ÉÒÔÍ¨¹ı:h magic²é¿´¸üÏêÏ¸µÄ°ïÖúĞÅÏ¢
-set magic
-
-" ¸ßÁÁÏÔÊ¾×ø±êËùÔÚĞĞ
-set cursorline
-
-" ²åÈëÓÒÀ¨ºÅÊ±»á¶ÌÔİµØÌø×ªµ½Æ¥ÅäµÄ×óÀ¨ºÅ
-set showmatch
-
-" ²»¶ÔÆ¥ÅäµÄÀ¨ºÅ½øĞĞ¸ßÁÁÏÔÊ¾
-let loaded_matchparen = 1
-
-" ¸ßÁÁÏÔÊ¾ËÑË÷Æ¥Åäµ½µÄ×Ö·û´®
-set hlsearch
-" ÔÚËÑË÷Ä£Ê½ÏÂ£¬Öğ×ÖÆ¥Åä
-set incsearch
-" ËÑË÷Ê±ºöÂÔ´óĞ¡Ğ´
-set ignorecase
-" ËÑË÷Ê±Èç¹ûÊäÈë´óĞ´×Ö·û£¬ÔòºöÂÔÉÏÃæignorecaseµÄÉèÖÃ
-set smartcase
-
-" ÎÄ±¾ÏÔÊ¾Ê±£¬Ò»¸ötab¶ÔÓ¦4¸ö¿Õ¸ñ
-set tabstop=4
-" Number of spaces to use for each step of (auto)indent.  Used for
-" 'cindent', >>, <<, etc.
-" ×Ô¶¯Ëõ½øÊ±£¬Ã¿¸öËõ½ø³ß¶È
-set shiftwidth=4
-" smarttab onÔÚĞĞÊ×ÊäÈëtabÊ±£¬²åÈëµÄ¿Õ¸ñÊıÒÔshiftwidthÎª×¼
-" smarttab offÔÚĞĞÊ×ÊäÈëtabÊ±£¬²åÈëµÄ¿Õ¸ñÊıÒÔtabstop»òsofttabstopÊıÎª×¼
-set smarttab
-" ÔÚ°´ÍË¸ñ¼üÊ±£¬Èç¹ûÇ°ÃæÂú×ã4¸ö¿Õ¸ñ£¬Ôò»áÒ»´ÎĞÔÇå³ı
-set softtabstop=4
-" ¼üÅÌÉÏ°´tab¼ü£¬Êµ¼ÊÊäÈëtabstop¸ö¿Õ¸ñ
-set expandtab
-
-" ÔÚÖ´ĞĞºêÃüÁîÊ±£¬²»½øĞĞÊµÊ±ÖØ»æ£»
-" ÔÚºêÃüÁîÖ´ĞĞÍê³Éºó£¬Ò»´ÎĞÔÖØ»æ£¬ÒÔ±ãÌá¸ßĞÔÄÜ¡£
-set lazyredraw
-
-" ÍË¸ñ¼ü¿ÉÒÔÉ¾³ıĞĞÊ×Ëõ½ø£¬Ç°Ò»ĞĞĞĞÄ©»»ĞĞ£¬²åÈëÄ£Ê½Ö®Ç°ÒÑ¾­´æÔÚµÄ×Ö·û
-set backspace=indent,eol,start
-
-" ÉèÖÃÔÊĞíbackspace£¬space£¬·½Ïò¼ü¿çĞĞ
-set whichwrap=b,s,<,>,[,]
-
-set encoding=utf-8
-source $VIMRUNTIME/delmenu.vim
-set langmenu=none
-source $VIMRUNTIME/menu.vim
-language message en_US.UTF-8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-set ambiwidth=double 
 
 " Enable filetype plugins
 filetype plugin on
@@ -102,6 +19,116 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
+set autochdir
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Visual Setting
+" => æ˜¾ç¤ºç›¸å…³
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" æŒ‰ç¼–ç¨‹è¯­è¨€çš„è¯­æ³•ï¼Œå¯¹ä»£ç è¿›è¡Œè‰²å½©æ ‡ç¤ºï¼Œæœ¯è¯­å«åšè¯­æ³•é«˜äº®
+" syntax enable
+" æ¸…é™¤è¯­æ³•é«˜äº®, syntax clear
+" set syntax=off
+syntax on
+
+
+" è®¾ç½®ä¸º>-æ ¼å¼,ç”¨$ç»“å°¾
+set listchars=tab:>-,eol:$
+
+colorscheme desert
+
+" æ˜¾ç¤ºè¡Œæ•°æ ‡ç¤º
+set number
+
+" æ‰“å¼€çŠ¶æ€æ çš„åæ ‡ä¿¡æ¯
+set ruler
+
+" è®¾ç½®guiç•Œé¢
+" æŠŠguiçš„å·¥å…·æ å»æ‰
+set guioptions-=T
+" æŠŠguiçš„èœå•å»æ‰
+set guioptions-=m
+" æŠŠguiçš„å³è¾¹çš„æ»‘åŠ¨æ¡å»æ‰
+set guioptions-=r
+" æŠŠguiçš„å·¦è¾¹çš„æ»‘åŠ¨æ¡å»æ‰
+set guioptions-=L
+
+" å–æ¶ˆåº•éƒ¨çŠ¶æ€æ æ˜¾ç¤ºã€‚1ä¸ºå…³é—­ï¼Œ2ä¸ºå¼€å¯
+" 0: never
+" 1: only if there are at least two windows
+" 2: always
+set laststatus=2
+set statusline=%.45F\ %m\%=\|%{&fileencoding?&fileencoding:&encoding}\|%{&fileformat}\|%{&filetype}\ %4l,%c
+
+" å°†è¾“å…¥çš„å‘½ä»¤æ˜¾ç¤ºå‡ºæ¥ï¼Œä¾¿äºæŸ¥çœ‹å½“å‰è¾“å…¥çš„ä¿¡æ¯
+set showcmd
+
+" è®¾ç½®é­”æœ¯åŒ¹é…æ§åˆ¶ï¼Œå¯ä»¥é€šè¿‡:h magicæŸ¥çœ‹æ›´è¯¦ç»†çš„å¸®åŠ©ä¿¡æ¯
+set magic
+
+" é«˜äº®æ˜¾ç¤ºåæ ‡æ‰€åœ¨è¡Œ
+set cursorline
+
+" æ’å…¥å³æ‹¬å·æ—¶ä¼šçŸ­æš‚åœ°è·³è½¬åˆ°åŒ¹é…çš„å·¦æ‹¬å·
+set showmatch
+
+" ä¸å¯¹åŒ¹é…çš„æ‹¬å·è¿›è¡Œé«˜äº®æ˜¾ç¤º
+let loaded_matchparen = 1
+
+" é«˜äº®æ˜¾ç¤ºæœç´¢åŒ¹é…åˆ°çš„å­—ç¬¦ä¸²
+set hlsearch
+" åœ¨æœç´¢æ¨¡å¼ä¸‹ï¼Œé€å­—åŒ¹é…
+set incsearch
+" æœç´¢æ—¶å¿½ç•¥å¤§å°å†™
+set ignorecase
+" æœç´¢æ—¶å¦‚æœè¾“å…¥å¤§å†™å­—ç¬¦ï¼Œåˆ™å¿½ç•¥ä¸Šé¢ignorecaseçš„è®¾ç½®
+set smartcase
+
+" æ–‡æœ¬æ˜¾ç¤ºæ—¶ï¼Œä¸€ä¸ªtabå¯¹åº”4ä¸ªç©ºæ ¼
+set tabstop=4
+" Number of spaces to use for each step of (auto)indent.  Used for
+" 'cindent', >>, <<, etc.
+" è‡ªåŠ¨ç¼©è¿›æ—¶ï¼Œæ¯ä¸ªç¼©è¿›å°ºåº¦
+set shiftwidth=4
+" smarttab onåœ¨è¡Œé¦–è¾“å…¥tabæ—¶ï¼Œæ’å…¥çš„ç©ºæ ¼æ•°ä»¥shiftwidthä¸ºå‡†
+" smarttab offåœ¨è¡Œé¦–è¾“å…¥tabæ—¶ï¼Œæ’å…¥çš„ç©ºæ ¼æ•°ä»¥tabstopæˆ–softtabstopæ•°ä¸ºå‡†
+set smarttab
+" åœ¨æŒ‰é€€æ ¼é”®æ—¶ï¼Œå¦‚æœå‰é¢æ»¡è¶³4ä¸ªç©ºæ ¼ï¼Œåˆ™ä¼šä¸€æ¬¡æ€§æ¸…é™¤
+set softtabstop=4
+" é”®ç›˜ä¸ŠæŒ‰tabé”®ï¼Œå®é™…è¾“å…¥tabstopä¸ªç©ºæ ¼
+set expandtab
+
+" åœ¨æ‰§è¡Œå®å‘½ä»¤æ—¶ï¼Œä¸è¿›è¡Œå®æ—¶é‡ç»˜ï¼›
+" åœ¨å®å‘½ä»¤æ‰§è¡Œå®Œæˆåï¼Œä¸€æ¬¡æ€§é‡ç»˜ï¼Œä»¥ä¾¿æé«˜æ€§èƒ½ã€‚
+set lazyredraw
+
+" é€€æ ¼é”®å¯ä»¥åˆ é™¤è¡Œé¦–ç¼©è¿›ï¼Œå‰ä¸€è¡Œè¡Œæœ«æ¢è¡Œï¼Œæ’å…¥æ¨¡å¼ä¹‹å‰å·²ç»å­˜åœ¨çš„å­—ç¬¦
+set backspace=indent,eol,start
+
+" è®¾ç½®å…è®¸backspaceï¼Œspaceï¼Œæ–¹å‘é”®è·¨è¡Œ
+set whichwrap=b,s,<,>,[,]
+
+set encoding=utf-8
+source $VIMRUNTIME/delmenu.vim
+set langmenu=none
+source $VIMRUNTIME/menu.vim
+" æ¶ˆæ¯è¯­è¨€å—å½“å‰ç¯å¢ƒå˜é‡è®¾ç½®å½±å“
+"language message en_US.UTF-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set ambiwidth=double 
+
+"å…³æ‰æ™ºèƒ½è¡¥å…¨æ—¶çš„é¢„è§ˆçª—å£ï¼Œè¿™æ ·å¯ä»¥é˜²æ­¢é—ªå±ç°è±¡
+set completeopt=longest,menu
+
+"è®¾ç½®çª—å£å¤§å°å’Œä½ç½®
+" set lines=100
+set columns=100
+" winpos 0 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Shortcuts
+" => å¿«æ·é”®è®¾ç½®
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
@@ -111,22 +138,14 @@ map <leader>b wbi{<Esc>ea}<Esc>
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" ÓÃÀ´´ò¿ªlist¹¦ÄÜ£¬ÏÔÊ¾²»¿É¼û×Ö·û
+" ç”¨æ¥æ‰“å¼€liståŠŸèƒ½ï¼Œæ˜¾ç¤ºä¸å¯è§å­—ç¬¦
 nmap <leader>l :set list!<CR>
-" ÉèÖÃÎª>-¸ñÊ½,ÓÃ$½áÎ²
-set listchars=tab:>-,eol:$
-
-colorscheme desert
-
-" set tags=tags;
-set autochdir
-
-" Ê¹ÓÃpathogen×Ô¶¯°²×°²å¼ş
-execute pathogen#infect()
-" ×Ô¶¯¼ÓÔØNERDTree
+" ä½¿ç”¨pathogenè‡ªåŠ¨å®‰è£…æ’ä»¶ï¼Œè¯¥æ’ä»¶éœ€è¦autoloadç›®å½•ä¸‹çš„pathogen.vimæä¾›ï¼Œæš‚æ—¶å±è”½
+" execute pathogen#infect()
+" è‡ªåŠ¨åŠ è½½NERDTree
 " autocmd vimenter * NERDTree
 
-"  Ê¹ÓÃTrinityÄ£Äâ Source Insight
+"  ä½¿ç”¨Trinityæ¨¡æ‹Ÿ Source Insight
 " Open and close all the three plugins on the same time 
 nmap <F8>  :TrinityToggleAll<CR> 
 " Open and close the Source Explorer separately 
@@ -136,14 +155,21 @@ nmap <F10> :TrinityToggleTagList<CR>
 " Open and close the NERD Tree separately 
 nmap <F11> :TrinityToggleNERDTree<CR> 
 
-
 let Tlist_Show_Menu = 1
-" ÕâÏî±ØĞëÉè¶¨£¬·ñÔò³ö´í,ÅäÖÃtaglistµÄctagsÂ·¾¶
+" è¿™é¡¹å¿…é¡»è®¾å®šï¼Œå¦åˆ™å‡ºé”™,é…ç½®taglistçš„ctagsè·¯å¾„
 "let Tlist_Ctags_Cmd = 'D:/Vim/vim71/ctags.exe'
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
-" Ê¹ÓÃF8´ò¿ªTaglist
+" ä½¿ç”¨F8æ‰“å¼€Taglist
 " nnoremap <silent> <F8>:TlistToggle<CR>
+" æŒ‰ä¸‹F5é‡æ–°ç”Ÿæˆtagæ–‡ä»¶ï¼Œå¹¶æ›´æ–°taglist
+map <leader>cg :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR> :TlistUpdate<CR>
+" imap <F5> <ESC>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR> :TlistUpdate<CR>
+
+" è®¾ç½®tagsæ–‡ä»¶è·¯å¾„ï¼Œè®¾ç½®ä¸ºå¯ä»¥å‘ä¸Šçº§ç›®å½•æŸ¥æ‰¾tagsæ–‡ä»¶ï¼Œç›´åˆ°æ‰¾åˆ°ä¸ºæ­¢
+set tags=./tags;tags
+" set tags=tags;
+" set tags+=F:/code/tags
 
 let g:winManagerWindowLayout='FileExplorer|TagList'
 nmap wm :WMToggle<cr> 
@@ -156,47 +182,30 @@ nnoremap <silent> <F12> :A<CR>
 
 nnoremap <silent> <F3> :Grep<CR> 
 
-"¹ØµôÖÇÄÜ²¹È«Ê±µÄÔ¤ÀÀ´°¿Ú£¬ÕâÑù¿ÉÒÔ·ÀÖ¹ÉÁÆÁÏÖÏó
-set completeopt=longest,menu
-
-"ÉèÖÃ´°¿Ú´óĞ¡ºÍÎ»ÖÃ
-" set lines=100
-set columns=100
-" winpos 0 0
-
-" °´ÏÂF5ÖØĞÂÉú³ÉtagÎÄ¼ş£¬²¢¸üĞÂtaglist
-map <leader>cg :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR> :TlistUpdate<CR>
-" imap <F5> <ESC>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR> :TlistUpdate<CR>
-
-" ÉèÖÃtagsÎÄ¼şÂ·¾¶£¬ÉèÖÃÎª¿ÉÒÔÏòÉÏ¼¶Ä¿Â¼²éÕÒtagsÎÄ¼ş£¬Ö±µ½ÕÒµ½ÎªÖ¹
-set tags=./tags;tags
-" set tags+=F:/code/tags
-
-
-" ÉèÖÃSuperTab£¬ÓÃtab¼ü´ò¿ªcppcompletµÄ×Ô¶¯²¹È«¹¦ÄÜ¡£
+" è®¾ç½®SuperTabï¼Œç”¨tabé”®æ‰“å¼€cppcompletçš„è‡ªåŠ¨è¡¥å…¨åŠŸèƒ½ã€‚
 let g:SuperTabRetainCompletionType=2
 let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
-"====================Lookupfile Ïà¹ØÉèÖÃ========================================
-let g:LookupFile_MinPatLength = 2               "×îÉÙÊäÈë2¸ö×Ö·û²Å¿ªÊ¼²éÕÒ
-let g:LookupFile_PreserveLastPattern = 0        "²»±£´æÉÏ´Î²éÕÒµÄ×Ö·û´®
-let g:LookupFile_PreservePatternHistory = 1     "±£´æ²éÕÒÀúÊ·
-let g:LookupFile_AlwaysAcceptFirst = 1          "»Ø³µ´ò¿ªµÚÒ»¸öÆ¥ÅäÏîÄ¿
-let g:LookupFile_AllowNewFiles = 0              "²»ÔÊĞí´´½¨²»´æÔÚµÄÎÄ¼ş
-if filereadable("./filenametags")                "ÉèÖÃtagÎÄ¼şµÄÃû×Ö
+"====================Lookupfile ç›¸å…³è®¾ç½®========================================
+let g:LookupFile_MinPatLength = 2               "æœ€å°‘è¾“å…¥2ä¸ªå­—ç¬¦æ‰å¼€å§‹æŸ¥æ‰¾
+let g:LookupFile_PreserveLastPattern = 0        "ä¸ä¿å­˜ä¸Šæ¬¡æŸ¥æ‰¾çš„å­—ç¬¦ä¸²
+let g:LookupFile_PreservePatternHistory = 1     "ä¿å­˜æŸ¥æ‰¾å†å²
+let g:LookupFile_AlwaysAcceptFirst = 1          "å›è½¦æ‰“å¼€ç¬¬ä¸€ä¸ªåŒ¹é…é¡¹ç›®
+let g:LookupFile_AllowNewFiles = 0              "ä¸å…è®¸åˆ›å»ºä¸å­˜åœ¨çš„æ–‡ä»¶
+if filereadable("./filenametags")                "è®¾ç½®tagæ–‡ä»¶çš„åå­—
     let g:LookupFile_TagExpr = '"./filenametags"'
 endif
-"nmap <silent> <leader>lk <Plug>LookupFile<cr>   "Ó³ÉäLookupFileÎª,lk
-"nmap <silent> <leader>ll :LUBufs<cr>            "Ó³ÉäLUBufsÎª,ll
-"nmap <silent> <leader>lw :LUWalk<cr>            "Ó³ÉäLUWalkÎª,lw
+"nmap <silent> <leader>lk <Plug>LookupFile<cr>   "æ˜ å°„LookupFileä¸º,lk
+"nmap <silent> <leader>ll :LUBufs<cr>            "æ˜ å°„LUBufsä¸º,ll
+"nmap <silent> <leader>lw :LUWalk<cr>            "æ˜ å°„LUWalkä¸º,lw
 
-"ÓĞÁËÉÏÃæµÄ¶¨Òå£¬µ±ÎÒÊäÈë¡±,lk¡±Ê±£¬¾Í»áÔÚtagÎÄ¼şÖĞ²éÕÒÖ¸¶¨µÄÎÄ¼şÃû£»
-"µ±ÊäÈë¡±,ll¡±Ê±£¬¾Í»áÔÚµ±Ç°ÒÑ´ò¿ªµÄbufferÖĞ²éÕÒÖ¸¶¨Ãû×ÖµÄbuffer£»
-"µ±ÊäÈë¡±,lw¡±Ê±£¬¾Í»áÔÚÖ¸¶¨Ä¿Â¼½á¹¹ÖĞ²éÕÒ¡£
+"æœ‰äº†ä¸Šé¢çš„å®šä¹‰ï¼Œå½“æˆ‘è¾“å…¥â€,lkâ€æ—¶ï¼Œå°±ä¼šåœ¨tagæ–‡ä»¶ä¸­æŸ¥æ‰¾æŒ‡å®šçš„æ–‡ä»¶åï¼›
+"å½“è¾“å…¥â€,llâ€æ—¶ï¼Œå°±ä¼šåœ¨å½“å‰å·²æ‰“å¼€çš„bufferä¸­æŸ¥æ‰¾æŒ‡å®šåå­—çš„bufferï¼›
+"å½“è¾“å…¥â€,lwâ€æ—¶ï¼Œå°±ä¼šåœ¨æŒ‡å®šç›®å½•ç»“æ„ä¸­æŸ¥æ‰¾ã€‚
 
-"ÔÚÓÃlookupfile²å¼ş²éÕÒÎÄ¼şÊ±£¬ÊÇÇø·ÖÎÄ¼şÃûµÄ´óĞ¡Ğ´µÄ£¬
-"Èç¹ûÏë½øĞĞºöÂÔ´óĞ¡Ğ´µÄÆ¥Åä£¬°ÑÏÂÃæÕâ¶Î´úÂë¼ÓÈëÄãµÄvimrcÖĞ£¬
-"¾Í¿ÉÒÔÃ¿´ÎÔÚ²éÕÒÎÄ¼şÊ±¶¼ºöÂÔ´óĞ¡Ğ´²éÕÒÁË£º
+"åœ¨ç”¨lookupfileæ’ä»¶æŸ¥æ‰¾æ–‡ä»¶æ—¶ï¼Œæ˜¯åŒºåˆ†æ–‡ä»¶åçš„å¤§å°å†™çš„ï¼Œ
+"å¦‚æœæƒ³è¿›è¡Œå¿½ç•¥å¤§å°å†™çš„åŒ¹é…ï¼ŒæŠŠä¸‹é¢è¿™æ®µä»£ç åŠ å…¥ä½ çš„vimrcä¸­ï¼Œ
+"å°±å¯ä»¥æ¯æ¬¡åœ¨æŸ¥æ‰¾æ–‡ä»¶æ—¶éƒ½å¿½ç•¥å¤§å°å†™æŸ¥æ‰¾äº†ï¼š
 
 " lookup file with ignore case
 function! LookupFile_IgnoreCaseFunc(pattern)
@@ -218,5 +227,5 @@ function! LookupFile_IgnoreCaseFunc(pattern)
 endfunction
 let g:LookupFile_LookupFunc = 'LookupFile_IgnoreCaseFunc'
 
-"====================Lookupfile Ïà¹ØÉèÖÃ end========================================
+"====================Lookupfile ç›¸å…³è®¾ç½® end========================================
 
