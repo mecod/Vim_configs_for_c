@@ -109,9 +109,10 @@ set backspace=indent,eol,start
 set whichwrap=b,s,<,>,[,]
 
 set encoding=utf-8
-source $VIMRUNTIME/delmenu.vim
-set langmenu=none
-source $VIMRUNTIME/menu.vim
+"source $VIMRUNTIME/delmenu.vim
+let $LANG='en'
+set langmenu=en
+"source $VIMRUNTIME/menu.vim
 " 消息语言受当前环境变量设置影响
 "language message en_US.UTF-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
